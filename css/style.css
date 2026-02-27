@@ -131,18 +131,13 @@ header {
   background-color: var(--card-color);
   padding: 1rem;
   border-radius: 4px;
-  height: 100%;
 }
 
 .cardtext {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: subgrid;
   gap: 1rem;
   margin-top: 0.5rem;
-
-  h3 {
-    flex-grow: 1;
-  }
 }
 
 .flex-discount {
@@ -222,6 +217,11 @@ header {
   }
 
   .productcards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #productcards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

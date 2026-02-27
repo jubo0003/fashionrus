@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="font-face" href="fonts/ExpletusSans-VariableFont_wght.ttf" />
     <link rel="font-face" href="fonts/SortsMillGoudy-Regular.ttf" />
+    <script src="productlist.js" defer></script>
 
     <title>Products</title>
   </head>
@@ -23,124 +24,9 @@
       </nav>
     </header>
     <main>
+      <h2>Products</h2>
       <section class="productlist">
-        <h2>Products</h2>
-        <div class="productcards">
-          <a href="product.html">
-            <article class="smallproduct">
-              <img
-                src="img/1532.webp"
-                alt="Male model wearing grey t-shirt with logo"
-              />
-              <div class="cardtext">
-                <h3>Grey Leaping Cat T-shirt</h3>
-                <p class="subtle">Tshirts | Nike</p>
-                <p class="price">
-                  DKK
-                  <span>899</span>
-                  ,-
-                </p>
-              </div>
-            </article>
-          </a>
-
-          <a href="product.html">
-            <article class="smallproduct">
-              <img src="img/1164.webp" alt="Sahara Team India jersey" />
-              <div class="cardtext">
-                <h3>Sahara Team India Fanwear Round Neck</h3>
-
-                <p class="subtle">Tshirts | Nike</p>
-                <div class="flex-discount">
-                  <div>
-                    <p class="price">
-                      DKK
-                      <span>895</span>
-                      ,-
-                    </p>
-                  </div>
-
-                  <div class="discounted">
-                    <p>
-                      Now DKK
-                      <span>795</span>
-                      ,-
-                    </p>
-                    <p class="percentage">
-                      <span>10</span>
-                      %
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </a>
-
-          <a href="product.html">
-            <article class="smallproduct">
-              <img src="img/1525.webp" alt="Sahara Team India jersey" />
-              <div class="cardtext">
-                <h3>Blue T20 Indian Cricket Jersey</h3>
-                <p class="subtle">Tshirts | Nike</p>
-                <div class="flex-discount">
-                  <div>
-                    <p class="price">
-                      DKK
-                      <span>895</span>
-                      ,-
-                    </p>
-                  </div>
-
-                  <div class="discounted">
-                    <p>
-                      Now DKK
-                      <span>795</span>
-                      ,-
-                    </p>
-                    <p class="percentage">
-                      <span>10</span>
-                      %
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </a>
-
-          <a href="product.html">
-            <article class="smallproduct">
-              <div class="soldout">
-                <img src="img/1165.webp" alt="Sort Cardigan" />
-                <p class="soldout-text">Sold Out</p>
-              </div>
-              <div class="cardtext">
-                <h3>Sahara Team India Fanwear Round Neck</h3>
-                <p class="subtle">Tshirts | Nike</p>
-                <div class="flex-discount">
-                  <div>
-                    <p class="price">
-                      DKK
-                      <span>895</span>
-                      ,-
-                    </p>
-                  </div>
-
-                  <div class="discounted">
-                    <p>
-                      Now DKK
-                      <span>795</span>
-                      ,-
-                    </p>
-                    <p class="percentage">
-                      <span>10</span>
-                      %
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
+        <div id="productcontainer"></div>
       </section>
     </main>
   </body>
