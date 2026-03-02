@@ -16,37 +16,13 @@ img {
   --accent-text-color: red;
   --card-color: #444444;
   --card-color-hover: #3e414d;
-
-  --primary-font: "Lato-regular", sans-serif;
-  --display-font: "Lato-bold", sans-serif;
-}
-
-@font-face {
-  font-family: "Lato-regular";
-  src:
-    url("../fonts/Lato-Regular.woff2") format("woff2"),
-    url("../fonts/Lato-Regular.woff") format("woff"),
-    url("../fonts/Lato-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Lato-bold";
-  src:
-    url("../fonts/Lato-Bold.woff2") format("woff2"),
-    url("..//fonts/Lato-Bold.woff") format("woff"),
-    url("..//fonts/Lato-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
 
 .flip {
   color: red;
   transform: scaleX(-1);
   display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -57,14 +33,14 @@ body {
 
   p,
   span {
-    font-family: var(--primary-font);
+    font-family: Georgia, "Times New Roman", Times, serif;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--display-font);
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--primary-text-color);
   }
 }
