@@ -25,7 +25,7 @@ function showData(json) {
               </div>
               <div class="cardtext">
                 <h3>${element.productdisplayname}</h3>
-                <p class="subtle">Tshirts | Nike</p>
+                <p class="subtle">${element.articletype} | ${element.brandname}</p>
                 <div class="flex-discount">
                   <div>
                     <p class="price">
@@ -42,7 +42,7 @@ function showData(json) {
                       ,-
                     </p>
                     <p class="percentage">
-                      <span>10</span>
+                      <span>${element.discount}</span>
                       %
                     </p>
                   </div>
