@@ -26,6 +26,11 @@ function renderProduct(json) {
             <p class="productprice">DKK <span>${json.price}</span> ,-</p>
 
             <a class="buybutton" href="#">Buy Now</a>
+
+
+
+
+
           </article>
         </section>`;
 }
