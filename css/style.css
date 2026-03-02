@@ -43,6 +43,12 @@ img {
   font-display: swap;
 }
 
+.flip {
+  color: red;
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--primary-text-color);
@@ -80,6 +86,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 /* -----categories----- */
@@ -128,14 +138,18 @@ header {
 }
 
 .smallproduct {
+  display: grid;
+  grid-template-rows: subgrid;
   background-color: var(--card-color);
   padding: 1rem;
   border-radius: 4px;
+  gap: 0.5rem;
 }
 
 .cardtext {
   display: grid;
   grid-template-columns: subgrid;
+  font-size: 0.9rem;
   gap: 1rem;
   margin-top: 0.5rem;
 }
@@ -153,6 +167,11 @@ header {
   justify-self: end;
   padding: 0.2rem;
   margin: 1rem;
+}
+
+.productlistheader {
+  margin-top: 1.5rem;
+  padding-left: 2rem;
 }
 
 /* -----productview-------- */
@@ -198,9 +217,19 @@ header {
 }
 
 @media (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+
   .productcards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #productcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 1.5rem;
   }
 }
 
@@ -221,7 +250,7 @@ header {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  #productcards {
+  #productcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
