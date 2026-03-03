@@ -18,10 +18,10 @@ function showData(json) {
     console.log(element);
     markup += `
     <a href="product.html?id=${element.id}">
-            <article class="smallproduct">
-              <div class="soldout">
+            <article class="smallproduct" >
+              <div class="${element.soldout && "soldout"}">
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="Product image" />
-                <p class="soldout-text">Sold Out</p>
+                ${element.soldout ? `<p class="soldout-text"}">Sold Out</p>` : ""}
               </div>
               <div class="cardtext">
                 <h3>${element.productdisplayname}</h3>
@@ -35,7 +35,9 @@ function showData(json) {
                     </p>
                   </div>
 
-                  <div class="discounted">
+                  ${
+                    element.discount
+                      ? `<div class="discounted">
                     <p>
                       Now DKK
                       <span>795</span>
@@ -44,7 +46,9 @@ function showData(json) {
                     <p class="percentage">
                       <span>${element.discount}</span>
                       %
-                    </p>
+                    </p>`
+                      : ""
+                  }
                   </div>
                 </div>
               </div>
