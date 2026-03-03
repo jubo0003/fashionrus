@@ -19,10 +19,11 @@ img {
 }
 
 .flip {
-  color: red;
+  color: rgb(193, 0, 0);
   transform: scaleX(-1);
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 
 body {
@@ -159,7 +160,7 @@ h1 {
   border-radius: 4px;
   padding: 1rem 2rem;
   text-align: center;
-  width: fit-content;
+  width: 80vw;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 1rem;
 }
@@ -185,6 +186,13 @@ h1 {
   p {
     font-size: 1rem;
   }
+}
+
+.productdescription {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
 }
 
 /* -----soldout----- */
@@ -241,5 +249,9 @@ h1 {
   .productview {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .buybutton {
+    max-width: 30vw;
   }
 }

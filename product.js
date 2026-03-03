@@ -27,6 +27,11 @@ function renderProduct(json) {
 
             <a class="buybutton" href="#">Buy Now</a>
 
+            <div class="productdescription">
+            <h4>Description:</h4>
+            <p><span>${json.description}<span></p>
+            <div>
+
 
 
 
