@@ -30,7 +30,7 @@ function showData(json) {
                   <div>
                     <p class="price">
                       DKK
-                      <span>${element.price}</span>
+                      <span class="${element.discount && "strike"}">${element.price}</span>
                       ,-
                     </p>
                   </div>
@@ -40,7 +40,7 @@ function showData(json) {
                       ? `<div class="discounted">
                     <p>
                       Now DKK
-                      <span>795</span>
+                      <span>${Math.round(element.price - (element.price * element.discount) / 100)}</span>
                       ,-
                     </p>
                     <p class="percentage">

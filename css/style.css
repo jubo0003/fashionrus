@@ -152,6 +152,10 @@ h1 {
   padding-left: 2rem;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 /* -----productview-------- */
 
 .buybutton {
