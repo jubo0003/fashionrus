@@ -1,19 +1,78 @@
 const urlcategory = new URLSearchParams(window.location.search).get("category");
 
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${urlcategory}`;
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${urlcategory}&limit=50`;
 
 const container = document.querySelector("#productcontainer");
 
+let allData; //erklær variabel til alle produkter
+let udsnit; //erklær variabel til et udsnit
+
+document
+  .querySelectorAll("#filtrer button")
+  .forEach((knap) => knap.addEventListener("click", filter));
+
+document
+  .querySelectorAll("#sorter button")
+  .forEach((knap) => knap.addEventListener("click", sorter));
+
 function getData() {
   fetch(endpoint)
-    .then((res) => res.json())
-    .then(showData);
+    .then((res) => res.json()) // -> new promise
+    .then((data) => {
+      allData = udsnit = data; //gem alle produkter
+      // ^ samme som at skrive
+      // allData = data
+      // udsnit = data
+      showProducts(allData); //vis alle produkter
+    });
 }
 
-function showData(json) {
+getData();
+
+function filter(e) {
+  const valgt = e.target.textContent;
+  console.log(valgt);
+  //console.table(allData);
+  if (valgt == "All") {
+    udsnit = allData; //sæt udsnit = alle produkter
+    showProducts(allData);
+  } else {
+    udsnit = allData.filter((element) => element.gender == valgt); //filtrer produkter
+    showProducts(udsnit); //vis filtrerede produkter
+  }
+}
+
+function sorter(e) {
+  if (!udsnit) return;
+  if (e.target.dataset.price) {
+    const dir = e.target.dataset.price;
+    if (dir == "acc") {
+      udsnit.sort((a, b) => a.price - b.price);
+    } else {
+      udsnit.sort((a, b) => b.price - a.price);
+    }
+  } else {
+    //ellers sorter alfabetisk
+    const dir = e.target.dataset.text; //læs retning "az" eller "za"
+    if (dir == "az") {
+      udsnit.sort((a, b) =>
+        a.productdisplayname.localeCompare(b.productdisplayname, "da"),
+      );
+    } else {
+      udsnit.sort((a, b) =>
+        b.productdisplayname.localeCompare(a.productdisplayname, "da"),
+      );
+    }
+  }
+  showProducts(udsnit);
+}
+
+function showProducts(json) {
+  if (!json) return;
+
   let markup = "";
 
-  console.log(json);
+  console.log({ json });
   json.forEach((element) => {
     console.log(element);
     markup += `
@@ -58,5 +117,3 @@ function showData(json) {
 
   container.innerHTML = markup;
 }
-
-getData();
